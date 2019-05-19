@@ -31,11 +31,22 @@
             />
           </center>
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-9">
           <center>
             Python first page
           </center>
         </div>
+        <div class="col-sm-1">
+            <center>
+            {% if user.username %}
+                <p>Hello {{user.username}}</p>
+                <p><a href="{% url 'logout'%}">Signout</a></p>
+                {% else %}
+                <p><a href="{% url 'register'%}">Register</a></p>
+                <p><a href="{% url 'login'%}">Login</a></p>
+            {% endif %}
+            </center>
+          </div>
       </div>
       <div class="row">
         <div class="col-sm-2">
