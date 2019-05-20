@@ -14,8 +14,5 @@ urlpatterns = [
         context_object_name = 'Posts', # Posts in blog.html
         paginate_by = 1,
         ), name="blog"),
-    path('<int:pk>/', DetailView.as_view(
-         model = Post,
-        template_name = 'blog/post.html',
-    ), name="post")
+    path('<int:pk>/',views.post, name="post")
 ]
